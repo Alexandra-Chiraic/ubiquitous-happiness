@@ -1,0 +1,386 @@
+:root {
+  color-scheme: dark;
+  --bg: #120c1d;
+  --surface: rgba(23, 28, 46, 0.96);
+  --text: #f7f8ff;
+  --muted: #b6c0d8;
+  --accent: #ffbfd8;
+  --accent-strong: #ff7ccf;
+  --accent-neon: #66f5ff;
+  --success: #6efc9c;
+  --danger: #ff6a7c;
+  --border: rgba(255, 255, 255, 0.12);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: radial-gradient(circle at top, rgba(102, 245, 255, 0.14), transparent 28%),
+    radial-gradient(circle at 90% 18%, rgba(255, 191, 216, 0.16), transparent 18%),
+    linear-gradient(180deg, var(--bg) 0%, #090713 100%);
+  color: var(--text);
+}
+
+body {
+  transition: filter 0.2s ease;
+}
+
+.page-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+}
+
+.hero {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  background: rgba(23, 28, 46, 0.92);
+  backdrop-filter: blur(18px);
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: #ffbfd8;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(3rem, 4vw, 5rem);
+  line-height: 0.92;
+  color: #ffbfd8;
+}
+
+.hero-text {
+  margin: 24px 0 0;
+  max-width: 560px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 16px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #ff9ad1, #ffb6e0);
+  color: #1b0818;
+  box-shadow: 0 18px 32px rgba(255, 128, 180, 0.22);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--text);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, #66f5ff, #7e63ff);
+  color: #07101f;
+}
+
+.hero-visual {
+  position: relative;
+  min-height: 320px;
+}
+
+.clinic-sign {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffc9e1;
+  text-shadow: 0 0 24px rgba(255, 182, 205, 0.55);
+}
+
+.clinic-card {
+  margin-top: 22px;
+  padding: 28px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+}
+
+.clinic-title {
+  margin: 0 0 12px;
+  color: #ff9ad1;
+  font-size: 1.4rem;
+}
+
+.clinic-body {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.settings-panel {
+  margin: 24px 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 24px;
+  background: rgba(18, 24, 40, 0.96);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.16);
+}
+
+.settings-panel h2 {
+  margin-top: 0;
+  color: #ffbfd8;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.settings-row:last-child {
+  border-bottom: none;
+}
+
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.settings-row label {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.settings-row input[type="range"] {
+  width: 100%;
+}
+
+.settings-hint {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+main {
+  margin-top: 40px;
+}
+
+.game-panel,
+.info-panel {
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  padding: 28px;
+  background: rgba(18, 24, 40, 0.96);
+  backdrop-filter: blur(24px);
+}
+
+.hidden {
+  display: none;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.game-header .label {
+  margin: 0;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+.patient-condition {
+  margin: 8px 0 0;
+  color: #ffbfd8;
+  font-size: 0.95rem;
+}
+
+.score-board {
+  text-align: right;
+}
+
+.score-board strong {
+  display: block;
+  font-size: 2.4rem;
+  margin-top: 6px;
+  color: #66f5ff;
+}
+
+.treatment-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+}
+
+.patient-card,
+.tools-card {
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 24px;
+  min-height: 340px;
+}
+
+.patient-card {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.patient-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 186, 224, 0.2), rgba(102, 245, 255, 0.2));
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+}
+
+.patient-summary h3 {
+  margin: 0 0 10px;
+  font-size: 1.4rem;
+}
+
+.patient-age {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+.patient-summary p {
+  margin: 0 0 12px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.step-counter {
+  margin: 0;
+  color: var(--accent-neon);
+  font-weight: 600;
+}
+
+.tools-card h3 {
+  margin: 0 0 18px;
+  color: #ffbfd8;
+}
+
+.tools-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.tool-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tool-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(102, 245, 255, 0.12);
+}
+
+.tool-btn span:first-child {
+  font-size: 1.5rem;
+}
+
+.tool-btn.correct {
+  background: rgba(110, 252, 156, 0.18);
+  border-color: rgba(110, 252, 156, 0.45);
+}
+
+.tool-btn.wrong {
+  background: rgba(255, 122, 122, 0.18);
+  border-color: rgba(255, 122, 122, 0.45);
+}
+
+.game-footer {
+  margin-top: 24px;
+  display: flex;
+  gap: 14px;
+}
+
+.explanation {
+  margin-top: 24px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.info-panel h2 {
+  margin-top: 0;
+}
+
+.info-panel ul {
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.info-panel li {
+  margin-bottom: 12px;
+}
+
+.note {
+  margin-top: 18px;
+  color: #ffbfd8;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .treatment-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 20px 16px 36px;
+  }
+
+  .patient-card {
+    grid-template-columns: 1fr;
+  }
+}

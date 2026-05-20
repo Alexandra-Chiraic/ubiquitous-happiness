@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediVille - Cabinet medical interactiv</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Cabinet medical</p>
+        <h1>MediVille</h1>
+        <p class="hero-text">Practică tratamente pentru 10 pacienți cu probleme reale și folosește instrumentele medicale corecte pentru a-i ajuta.</p>
+        <div class="hero-buttons">
+          <button id="startBtn" class="btn btn-primary">Start game</button>
+          <button id="settingsBtn" class="btn btn-secondary">Setări</button>
+          <button id="howBtn" class="btn btn-secondary">Cum se joacă</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="clinic-sign">MediVille</div>
+        <div class="clinic-card">
+          <p class="clinic-title">Cabinetul tău de practică</p>
+          <p class="clinic-body">Ai la dispoziție instrumente, scenarii și pași concreți pentru fiecare pacient. Ești gata să devii un asistent medical adevărat?</p>
+        </div>
+      </div>
+    </header>
+
+    <section id="settingsPanel" class="settings-panel hidden">
+      <h2>Setări MediVille</h2>
+      <div class="settings-row">
+        <span>Sunet</span>
+        <button id="muteBtn" class="btn btn-secondary">Muzică: Pornit</button>
+      </div>
+      <div class="settings-row">
+        <label for="brightnessRange">Luminozitate</label>
+        <div class="slider-row">
+          <input id="brightnessRange" type="range" min="0.6" max="1.4" step="0.05" value="1" />
+          <span id="brightnessValue">100%</span>
+        </div>
+      </div>
+      <p class="settings-hint">Ajustează atmosfera pentru cabinetul tău și rămâi atent la fiecare intervenție.</p>
+    </section>
+
+    <main>
+      <section id="gamePanel" class="game-panel hidden">
+        <div class="game-header">
+          <div>
+            <p class="label">Pacient</p>
+            <h2 id="patientName">Maria</h2>
+            <p class="patient-condition" id="patientCondition">Blocaj în gât</p>
+          </div>
+          <div class="score-board">
+            <p>Scor</p>
+            <strong id="score">0</strong>
+          </div>
+        </div>
+
+        <div class="treatment-layout">
+          <section id="patientCard" class="patient-card">
+            <div class="patient-icon">🩺</div>
+            <div class="patient-summary">
+              <div class="patient-list" id="patientList"></div>
+              <p class="patient-age" id="patientAge">14 ani</p>
+              <h3 id="patientIssue">Corpul străin blochează gâtul</h3>
+              <p id="patientStory">Maria are dificultăți la înghițire și trebuie să îndepărtezi obiectul blocat înainte să dezinfectezi și să aplici un tratament calmant.</p>
+              <p class="step-counter">Pas <span id="stepNumber">1</span> din <span id="stepTotal">3</span></p>
+              <p class="drag-hint">Trage instrumentul direct pe pacient pentru a-l trata.</p>
+            </div>
+          </section>
+
+          <section class="tools-card">
+            <h3>Instrumente disponibile</h3>
+            <p class="drag-instruction">Trage instrumentul peste pacient sau apasă pe el.</p>
+            <div id="tools" class="tools-grid"></div>
+            <div class="game-footer">
+              <button id="nextBtn" class="btn btn-accent hidden">Următor</button>
+              <button id="retryBtn" class="btn btn-secondary hidden">Reia</button>
+            </div>
+          </section>
+        </div>
+
+        <p id="explanation" class="explanation">Alege instrumentul corect pentru tratamentul tuturor pacienților.</p>
+      </section>
+
+      <section id="howPanel" class="info-panel hidden">
+        <h2>Cum se joacă</h2>
+        <ul>
+          <li>Urmărește problema pacientului și fiecare pas necesar pentru tratament.</li>
+          <li>Alege instrumentul corect din listă: pensetă, bandaj, dezinfectant, seringă și altele.</li>
+          <li>Progresezi de la un pacient la altul și înveți un flux medical realist.</li>
+        </ul>
+        <p class="note">Este o experiență medicală adaptată adolescenților, cu acțiuni clare și instrumente prietenoase.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
